@@ -1,5 +1,6 @@
 package com.example.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,9 +25,25 @@ class MainActivity : AppCompatActivity() {
         buttonLogin = findViewById(R.id.button_login)
         buttonLogin.setOnClickListener {
             userTexto = editUser.text.toString()
-            Toast.makeText(this, userTexto + senha, Toast.LENGTH_LONG).show()
+            exibirToast(userTexto)
         }
 
+        val buttonCad: Button
+        buttonCad = findViewById(R.id.button_cadastro)
+        buttonCad.setOnClickListener {
+            irParaCadastro()
+        }
+
+    }
+
+    fun exibirToast(texto: String) {
+        Toast.makeText(this, texto, Toast.LENGTH_LONG).show()
+    }
+
+
+    fun irParaCadastro() {
+        val intent = Intent(this, CadastroActivity::class.java)
+        startActivity(intent)
     }
 
 }
