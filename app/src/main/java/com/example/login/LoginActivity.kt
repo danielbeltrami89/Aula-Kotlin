@@ -7,25 +7,26 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
-        // Edit Text
         val editUser: EditText
         editUser = findViewById(R.id.edit_user)
+        // criar editText de senha
 
-        // Variavel de texto
         var userTexto: String
+        // criar varivel de senha
 
-        // Button
         val buttonLogin: Button
         buttonLogin = findViewById(R.id.button_login)
         buttonLogin.setOnClickListener {
             userTexto = editUser.text.toString()
-            exibirToast(userTexto)
+            // capturar senha digitada
+
+            // fazer os teste de senha e email (if else)
         }
 
         val buttonCad: Button
@@ -39,7 +40,6 @@ class MainActivity : AppCompatActivity() {
     fun exibirToast(texto: String) {
         Toast.makeText(this, texto, Toast.LENGTH_LONG).show()
     }
-
 
     fun irParaCadastro() {
         val intent = Intent(this, CadastroActivity::class.java)
