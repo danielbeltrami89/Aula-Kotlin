@@ -15,18 +15,20 @@ class LoginActivity : AppCompatActivity() {
 
         val editUser: EditText
         editUser = findViewById(R.id.edit_user)
-        // criar editText de senha
+
+        val editPass: EditText
+        editPass = findViewById(R.id.edit_pass)
 
         var userTexto: String
-        // criar varivel de senha
+        var passTexto: String
 
         val buttonLogin: Button
         buttonLogin = findViewById(R.id.button_login)
         buttonLogin.setOnClickListener {
             userTexto = editUser.text.toString()
-            // capturar senha digitada
+            passTexto = editPass.text.toString()
 
-            // fazer os teste de senha e email (if else)
+            
         }
 
         val buttonCad: Button
