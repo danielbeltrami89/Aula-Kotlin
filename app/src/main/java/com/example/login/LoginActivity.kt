@@ -13,21 +13,30 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val editUser: EditText
-        editUser = findViewById(R.id.edit_user)
+        val editEmail: EditText
+        editEmail = findViewById(R.id.edit_user)
 
         val editPass: EditText
         editPass = findViewById(R.id.edit_pass)
 
-        var userTexto: String
+        var emailTexto: String
         var passTexto: String
 
         val buttonLogin: Button
         buttonLogin = findViewById(R.id.button_login)
         buttonLogin.setOnClickListener {
-            userTexto = editUser.text.toString()
+            emailTexto = editEmail.text.toString()
             passTexto = editPass.text.toString()
 
+            // e : &&
+            // ou : ||
+            if ((emailTexto == "x") && (passTexto == "2")) {
+                // se for verdade
+                Toast.makeText(this, "Login com sucesso").show()
+            } else {
+                // se for falso
+                Toast.makeText(this, "Email ou senha incorretos").show()
+            }
             
         }
 
